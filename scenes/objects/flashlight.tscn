@@ -24,9 +24,9 @@ rotation = 1.5708
 color = Color(0.337255, 0.835294, 1, 1)
 energy = 2.98
 shadow_enabled = true
+shadow_filter = 1
 texture = ExtResource("2_0u8xd")
 texture_scale = 4.49
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="PointLight2D"]
-rotation = -1.5708
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_u2xh4")

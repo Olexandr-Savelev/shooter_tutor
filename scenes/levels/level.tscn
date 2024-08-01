@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfuuprelq6k6m"]
+[gd_scene load_steps=18 format=3 uid="uid://dfuuprelq6k6m"]
 
 [ext_resource type="PackedScene" uid="uid://dj50dw8toecwe" path="res://scenes/player/player.tscn" id="1_maebb"]
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_v5jb1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d0fxhmlg5w1mu" path="res://graphics/decals/moss/moss_2.png" id="7_y3xg8"]
 [ext_resource type="Texture2D" uid="uid://d4hylwpdynfj8" path="res://graphics/decals/moss/moss_1.png" id="8_l2gry"]
 [ext_resource type="PackedScene" uid="uid://bnwlkp70l42sq" path="res://scenes/objects/flashlight.tscn" id="11_lueby"]
+[ext_resource type="PackedScene" uid="uid://boxolnd0ros41" path="res://scenes/objects/wall_light.tscn" id="12_tvo7u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2hph0"]
 
@@ -143,9 +144,25 @@ position = Vector2(-61, -55)
 [node name="House" parent="." instance=ExtResource("7_2p6qt")]
 position = Vector2(-8233, 3187)
 
-[node name="Flashlight" parent="House" instance=ExtResource("11_lueby")]
-position = Vector2(2675, -271)
-rotation = 3.14159
+[node name="Lights" type="Node2D" parent="House"]
+
+[node name="WallLight" parent="House/Lights" instance=ExtResource("12_tvo7u")]
+position = Vector2(2754, -334)
+
+[node name="Flashlight" parent="House/Lights" instance=ExtResource("11_lueby")]
+position = Vector2(-985, -3622)
+
+[node name="Flashlight3" parent="House/Lights" instance=ExtResource("11_lueby")]
+position = Vector2(1297, 1854)
+rotation = 1.5708
+
+[node name="Flashlight4" parent="House/Lights" instance=ExtResource("11_lueby")]
+position = Vector2(4022, -1416)
+rotation = 1.5708
+
+[node name="Flashlight2" parent="House/Lights" instance=ExtResource("11_lueby")]
+position = Vector2(-2054, -412)
+rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource("1_maebb")]
 position = Vector2(-5488, 585)
