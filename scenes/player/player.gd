@@ -9,6 +9,7 @@ const speed : int = 500
 @onready var grenade_cooldown = $GrenadeCooldown
 @onready var lasers_spawn_markers = $LasersSpawnMarkers
 @onready var grenade_spawn_marker = $GrenadeSpawnMarker
+@onready var gpu_particles_2d = $GPUParticles2D
 
 signal laser(laser_position, direction)
 signal grenade(grenade_position, direction)
@@ -28,6 +29,7 @@ func _physics_process(_delta):
 
 func shoot_laser() -> void:
 	can_laser = false
+	gpu_particles_2d.emitting = true
 	laser_cooldown.start()
 	var laser_markers = lasers_spawn_markers.get_children()
 	var laser_position : Vector2 = laser_markers[randi() % laser_markers.size()].global_position

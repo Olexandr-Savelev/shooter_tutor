@@ -4,26 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://q8j1h71pt4cc" path="res://graphics/objects/gate.png" id="2_lxi3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nquuv"]
-size = Vector2(670.5, 41)
+size = Vector2(670.5, 74)
 
 [node name="Gate" type="StaticBody2D"]
 script = ExtResource("1_ujfou")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(548, -560)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_lxi3y")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(576, 181)
 scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(-4728, -5460, -4712, -1192, -4604, -904, -4416, -680, -4044, -496, -1296, -492, -1284, -896, -1124, -1040, 1348, -1036, 1436, -880, 1460, -496, 4248, -508, 4708, -784, 4892, -1208, 4872, -5448)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(548, -560)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_lxi3y")
+
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(594.75, -19.5)
+position = Vector2(594.75, -3)
 shape = SubResource("RectangleShape2D_nquuv")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
