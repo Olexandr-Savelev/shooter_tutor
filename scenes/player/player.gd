@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 var can_laser : bool = true
 var can_grenade : bool = true
-const speed : int = 500
+@export var speed : int = 500
+
 
 @onready var player_image = $PlayerImage
 @onready var laser_cooldown = $LaserCooldown
@@ -26,6 +27,7 @@ func _physics_process(_delta):
 		shoot_laser()
 	if Input.is_action_pressed("secondary action") and can_grenade:
 		shoot_grenade()
+
 
 func shoot_laser() -> void:
 	can_laser = false

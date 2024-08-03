@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://mkhsf3was0ub"]
+
+[ext_resource type="PackedScene" uid="uid://b1tvjxye23t7q" path="res://scenes/generics/item_container.tscn" id="1_mxo67"]
+[ext_resource type="Texture2D" uid="uid://dl23p0tps738a" path="res://graphics/objects/Box.png" id="2_2dfku"]
+[ext_resource type="Script" path="res://scenes/objects/box.gd" id="2_ircu3"]
+
+[node name="Box" instance=ExtResource("1_mxo67")]
+script = ExtResource("2_ircu3")
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-177, -110, -177, 108, -174, 120, -163, 128, 159, 128, 170, 124, 177, 112, 177, -106, 173, -119, 162, -125, -159, -125, -171, -120)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_2dfku")

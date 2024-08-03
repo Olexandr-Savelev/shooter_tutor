@@ -7,6 +7,8 @@
 polygon = PackedVector2Array(176, -5, 173, 3, 173, 59, 183, 54, 187, 47, 187, 10, 184, 7, 182, -3)
 
 [node name="WallLight" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-336, 80, -358, 23, -305, -57, -249, -81, 242, -81, 299, -54, 350, 20, 325, 85)
@@ -20,10 +22,10 @@ region_rect = Rect2(-10.3427, -13.8392, 862.75, 182.471)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.975692, 0.383075, 0.581802, 1)
-energy = 4.72
+energy = 6.0
 shadow_enabled = true
 texture = ExtResource("2_okmc4")
-texture_scale = 4.82
+texture_scale = 6.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_qhtj7")
