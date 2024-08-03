@@ -135,17 +135,19 @@ position = Vector2(3172, 1562)
 rotation = 0.20944
 texture = ExtResource("8_3dshe")
 
-[node name="Gate" parent="." index="1" instance=ExtResource("9_a1pxa")]
+[node name="House" parent="." index="1" instance=ExtResource("13_hnp0g")]
+position = Vector2(-7915, 659)
+
+[node name="Gate" parent="." index="2" instance=ExtResource("9_a1pxa")]
 position = Vector2(-64, -57)
 
-[node name="Box" parent="." index="2" instance=ExtResource("12_kd0s0")]
+[node name="Box" parent="." index="3" instance=ExtResource("12_kd0s0")]
 position = Vector2(2658, 755)
 rotation = 0.923279
 
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="5"]
 position = Vector2(621, 428)
 
-[node name="House" parent="." index="5" instance=ExtResource("13_hnp0g")]
-position = Vector2(-7915, 659)
-
+[connection signal="player_entered" from="House" to="." method="_on_house_player_entered"]
+[connection signal="player_left" from="House" to="." method="_on_house_player_left"]
 [connection signal="player_entered" from="Gate" to="." method="_on_gate_player_entered"]
