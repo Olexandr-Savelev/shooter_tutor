@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://byhanyujg1rx2" path="res://graphics/projectiles/grenade.png" id="1_em5ej"]
 [ext_resource type="Script" path="res://scenes/projectiles/grenade.gd" id="1_q8hpw"]
 [ext_resource type="Texture2D" uid="uid://dpdj8hnfcu63i" path="res://graphics/explosions/explosion_3.png" id="3_oq8qa"]
-[ext_resource type="Texture2D" uid="uid://dugllqb2nidgy" path="res://graphics/lights/textures/circle.png" id="4_50l7f"]
+[ext_resource type="Texture2D" uid="uid://dugllqb2nidgy" path="res://graphics/lights/overlays/circle.png" id="4_50l7f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g7msv"]
 friction = 3.0

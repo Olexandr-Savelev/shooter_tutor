@@ -11,7 +11,7 @@ script = ExtResource("1_v5jb1")
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_maebb")]
-position = Vector2(-5640, 707)
+position = Vector2(-108, 281)
 rotation = -1.5708
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

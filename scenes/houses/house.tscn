@@ -47,21 +47,17 @@ rotation = -1.5708
 
 [node name="LightFan" parent="LightFan" instance=ExtResource("5_kww61")]
 position = Vector2(393, -1369)
-autoplay = "fan"
 
 [node name="LightFan2" parent="LightFan" instance=ExtResource("5_kww61")]
 position = Vector2(-1328, 584)
-autoplay = "fan"
 frame_progress = 0.890775
 
 [node name="LightFan3" parent="LightFan" instance=ExtResource("5_kww61")]
 position = Vector2(-1333, -1387)
-autoplay = "fan"
 frame_progress = 0.890775
 
 [node name="LightFan4" parent="LightFan" instance=ExtResource("5_kww61")]
 position = Vector2(397, 585)
-autoplay = "fan"
 frame_progress = 0.890775
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

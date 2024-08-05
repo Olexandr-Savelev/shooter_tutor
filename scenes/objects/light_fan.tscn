@@ -48,7 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://cwqe4v04sb6pt" path="res://graphics/lights/fan_animation/00045.png" id="46_eogxl"]
 [ext_resource type="Texture2D" uid="uid://yrwb6l0scsi6" path="res://graphics/lights/fan_animation/00046.png" id="47_31kfi"]
 [ext_resource type="Texture2D" uid="uid://cduccx2uw8qjl" path="res://graphics/lights/fan_animation/00047.png" id="48_q5j3e"]
-[ext_resource type="Texture2D" uid="uid://dugllqb2nidgy" path="res://graphics/lights/textures/circle.png" id="49_ubeef"]
+[ext_resource type="Texture2D" uid="uid://dugllqb2nidgy" path="res://graphics/lights/textures/circle.png" id="49_u8r2b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r2mm5"]
 animations = [{
@@ -211,5 +211,5 @@ frame_progress = 0.942617
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(0.96, 1)
 energy = 2.23
-texture = ExtResource("49_ubeef")
+texture = ExtResource("49_u8r2b")
 texture_scale = 0.73
