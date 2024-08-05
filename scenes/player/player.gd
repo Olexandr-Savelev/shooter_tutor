@@ -23,13 +23,14 @@ func _physics_process(_delta):
 	
 	look_at(get_global_mouse_position())
 	
-	if Input.is_action_pressed("primary action") and can_laser:
+	if Input.is_action_pressed("primary action") and can_laser and Globals.laser_amount > 0:
 		shoot_laser()
-	if Input.is_action_pressed("secondary action") and can_grenade:
+	if Input.is_action_pressed("secondary action") and can_grenade and Globals.grenade_amount > 0:
 		shoot_grenade()
 
 
 func shoot_laser() -> void:
+	Globals.laser_amount -= 1
 	can_laser = false
 	gpu_particles_2d.emitting = true
 	laser_cooldown.start()
@@ -40,6 +41,7 @@ func shoot_laser() -> void:
 
 
 func shoot_grenade() -> void:
+	Globals.grenade_amount -= 1
 	can_grenade = false
 	grenade_cooldown.start()
 	var grenade_position : Vector2 = grenade_spawn_marker.get_children()[0].global_position

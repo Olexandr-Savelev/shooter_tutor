@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://d23nwtcui2pjc"]
 
 [ext_resource type="PackedScene" uid="uid://b1tvjxye23t7q" path="res://scenes/generics/item_container.tscn" id="1_vbgdv"]
-[ext_resource type="Script" path="res://ElectricBox.gd" id="2_iru3s"]
+[ext_resource type="Script" path="res://scenes/objects/electric_box.gd" id="2_ciy3e"]
 [ext_resource type="Texture2D" uid="uid://crhdd7woeron4" path="res://graphics/objects/electric_box.png" id="3_rydkp"]
 [ext_resource type="Texture2D" uid="uid://dugllqb2nidgy" path="res://graphics/lights/textures/circle.png" id="4_24vtk"]
 
@@ -107,7 +107,7 @@ _data = {
 }
 
 [node name="ElectricBox" instance=ExtResource("1_vbgdv")]
-script = ExtResource("2_iru3s")
+script = ExtResource("2_ciy3e")
 
 [node name="CollisionPolygon2D" parent="." index="0"]
 polygon = PackedVector2Array(-178, -109, -178, 107, -171, 121, -158, 128, 155, 128, 169, 123, 177, 111, 178, -104, 174, -118, 164, -126, -159, -126, -173, -119)

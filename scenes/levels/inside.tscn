@@ -98,40 +98,44 @@ position = Vector2(-1329, -708)
 rotation = -1.5708
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." index="5"]
-position = Vector2(328, -1808)
-rotation = 1.5708
+[node name="Fans" type="Node2D" parent="." index="5"]
 
-[node name="PointLight2D" type="PointLight2D" parent="Player" index="9"]
-position = Vector2(15, -3.00003)
-rotation = -1.5708
-texture = ExtResource("9_23b0u")
-texture_scale = 3.0
-
-[node name="LightFan" parent="." index="6" instance=ExtResource("9_hdi0x")]
+[node name="LightFan" parent="Fans" index="0" instance=ExtResource("9_hdi0x")]
 position = Vector2(792, 2389)
 scale = Vector2(2, 2)
 metadata/_edit_lock_ = true
 
-[node name="LightFan2" parent="." index="7" instance=ExtResource("9_hdi0x")]
+[node name="LightFan2" parent="Fans" index="1" instance=ExtResource("9_hdi0x")]
 position = Vector2(783, 4892)
 scale = Vector2(2, 2)
 
-[node name="LightFan3" parent="." index="8" instance=ExtResource("9_hdi0x")]
+[node name="LightFan3" parent="Fans" index="2" instance=ExtResource("9_hdi0x")]
 position = Vector2(783, 7761)
 scale = Vector2(2, 2)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="9"]
-color = Color(0.800491, 0.800491, 0.800491, 1)
+[node name="Player" parent="." index="6"]
+position = Vector2(394, -2377)
+rotation = 1.5708
+
+[node name="PointLight2D" type="PointLight2D" parent="Player" index="9"]
+position = Vector2(6.99984, -3.00005)
+rotation = -1.5708
+scale = Vector2(0.639167, 0.540833)
+texture = ExtResource("9_23b0u")
+texture_scale = 3.0
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="7"]
+color = Color(0.446777, 0.446777, 0.446777, 1)
 blend_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="Area2D" type="Area2D" parent="." index="10"]
+[node name="ChangeLevelArea" type="Area2D" parent="." index="8"]
 position = Vector2(391, -2924)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeLevelArea" index="0"]
 position = Vector2(1, -2.5)
 shape = SubResource("RectangleShape2D_3fwot")
 metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ChangeLevelArea" to="." method="_on_area_2d_body_entered"]

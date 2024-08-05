@@ -6,9 +6,11 @@ class_name RootLevel
 
 var laser_scene : PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var grenade_scene : PackedScene = preload("res://scenes/projectiles/grenade.tscn")
+@onready var ui = $UI
 
 
 func _on_player_laser(laser_position, direction):
+	ui.update_laser_count()
 	var laser = laser_scene.instantiate() as Area2D
 	laser.position = laser_position
 	laser.direction = direction
@@ -17,6 +19,7 @@ func _on_player_laser(laser_position, direction):
 
 
 func _on_player_grenade(grenade_position, direction):
+	ui.update_grenade_count()
 	var grenade = grenade_scene.instantiate() as RigidBody2D
 	grenade.position = grenade_position
 	grenade.linear_velocity = direction * grenade.speed

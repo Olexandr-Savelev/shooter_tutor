@@ -6,8 +6,6 @@ extends ItemContainer
 func _ready():
 	spark_emitting_timer.start()
 
-func printMsg():
-	print('TIMER')
 
 func hit():
 	print('electric box')
