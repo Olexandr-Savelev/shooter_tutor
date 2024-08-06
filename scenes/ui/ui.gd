@@ -23,7 +23,7 @@ func update_grenade_count():
 	grenade_label.text = str(grenade_amount)
 	update_color(grenade_amount, grenade_label, grenade_icon)
 
-func update_color(amount, label, icon):
+func update_color(amount: int, label: Label, icon: TextureRect) -> void: 
 	if amount > 0:
 		label.modulate = green
 		icon.modulate = green
