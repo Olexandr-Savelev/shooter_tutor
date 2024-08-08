@@ -2,7 +2,6 @@ extends StaticBody2D
 
 @export var blinking : bool = false
 
-var rng = RandomNumberGenerator.new()
 var period : float 
 var min_blinking_period : float = 0.05
 var max_blinking_period : float = 0.4
@@ -27,4 +26,4 @@ func reset_timer():
 	timer.wait_time = period
 
 func get_random_period():
-	period = rng.randf_range(min_blinking_period, max_blinking_period)
+	period = randf_range(min_blinking_period, max_blinking_period)

@@ -15,7 +15,6 @@ var can_grenade : bool = true
 signal laser(laser_position, direction)
 signal grenade(grenade_position, direction)
 
-
 func _physics_process(_delta):
 	var direction : Vector2 = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
@@ -48,10 +47,17 @@ func shoot_grenade() -> void:
 	var player_direction = (get_global_mouse_position() - position).normalized()
 	grenade.emit(grenade_position, player_direction)
 
-
 func _on_laser_cooldown_timeout():
 	can_laser = true
 
-
 func _on_grenade_cooldown_timeout():
 	can_grenade = true
+
+func get_item(type: String) -> void:
+	if type == 'laser':
+		Globals.laser_amount += 5
+	elif type == 'grenade':
+		Globals.grenade_amount += 3
+	else:
+		Globals.health_amount += 10
+

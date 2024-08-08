@@ -1,14 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://b18dkbl5hxgl1"]
+[gd_scene load_steps=5 format=3 uid="uid://b18dkbl5hxgl1"]
 
 [ext_resource type="PackedScene" uid="uid://b1tvjxye23t7q" path="res://scenes/generics/item_container.tscn" id="1_skayn"]
 [ext_resource type="Texture2D" uid="uid://d07el5n5gifhw" path="res://graphics/objects/toilet.png" id="2_nbahw"]
 [ext_resource type="Script" path="res://scenes/objects/toilet.gd" id="2_nhc3k"]
+[ext_resource type="Texture2D" uid="uid://chi62cir3f1rc" path="res://graphics/objects/lid.png" id="4_rq5o8"]
 
-[node name="Toilet" instance=ExtResource("1_skayn")]
+[node name="Toilet" groups=["containers"] instance=ExtResource("1_skayn")]
 script = ExtResource("2_nhc3k")
 
 [node name="CollisionPolygon2D" parent="." index="0"]
 polygon = PackedVector2Array(-111, -109, -118, -103, -118, -72, -109, -59, -91, -59, -100, -40, -102, -14, -97, 19, -84, 48, -72, 68, -45, 101, -21, 118, -5, 125, 8, 124, 27, 116, 51, 94, 74, 66, 87, 44, 96, 22, 101, 1, 102, -35, 91, -59, 107, -59, 118, -69, 118, -101, 114, -107, 96, -118, 90, -124, -89, -124, -94, -118, -104, -115)
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="BaseSprite" parent="." index="1"]
 texture = ExtResource("2_nbahw")
+
+[node name="LidSprite" parent="." index="2"]
+position = Vector2(-1, 19)
+texture = ExtResource("4_rq5o8")
+
+[node name="SpawnMarker" type="Marker2D" parent="SpawnPositions" index="0"]

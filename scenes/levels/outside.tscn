@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ctimd65nv4xdt"]
+[gd_scene load_steps=19 format=3 uid="uid://ctimd65nv4xdt"]
 
 [ext_resource type="PackedScene" uid="uid://dfuuprelq6k6m" path="res://scenes/levels/level.tscn" id="1_dap7j"]
 [ext_resource type="Texture2D" uid="uid://dcyy288sos6pf" path="res://graphics/ground/stones.png" id="2_2l1yt"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://r8st7leh2fns" path="res://scenes/objects/gate.tscn" id="9_a1pxa"]
 [ext_resource type="PackedScene" uid="uid://mkhsf3was0ub" path="res://scenes/objects/box.tscn" id="12_kd0s0"]
 [ext_resource type="PackedScene" uid="uid://bmawb7fx3q7" path="res://scenes/houses/house.tscn" id="13_hnp0g"]
+[ext_resource type="PackedScene" uid="uid://hujsef3jwcc2" path="res://scenes/objects/item.tscn" id="13_x5g3w"]
+[ext_resource type="PackedScene" uid="uid://b18dkbl5hxgl1" path="res://scenes/objects/toilet.tscn" id="14_n0piq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2hph0"]
 
@@ -141,12 +143,32 @@ position = Vector2(-7915, 659)
 [node name="Gate" parent="." index="2" instance=ExtResource("9_a1pxa")]
 position = Vector2(-64, -57)
 
-[node name="Box" parent="." index="3" instance=ExtResource("12_kd0s0")]
-position = Vector2(2658, 755)
-rotation = 0.923279
+[node name="Objects" type="Node2D" parent="." index="3"]
+position = Vector2(1254, 755)
 
-[node name="Player" parent="." index="5"]
+[node name="Box2" parent="Objects" index="0" instance=ExtResource("12_kd0s0")]
+position = Vector2(-117, 241)
+rotation = -1.5708
+collision_layer = 1
+collision_mask = 1
+
+[node name="Box" parent="Objects" index="1" instance=ExtResource("12_kd0s0")]
+position = Vector2(-396, 736)
+rotation = 0.923279
+collision_layer = 1
+collision_mask = 1
+
+[node name="Toilet" parent="Objects" index="2" instance=ExtResource("14_n0piq")]
+position = Vector2(-10, -339)
+rotation = 3.14159
+collision_layer = 1
+collision_mask = 1
+
+[node name="Player" parent="." index="6"]
 position = Vector2(621, 428)
+
+[node name="Item" parent="." index="7" instance=ExtResource("13_x5g3w")]
+position = Vector2(204, 430)
 
 [connection signal="player_entered" from="House" to="." method="_on_house_player_entered"]
 [connection signal="player_left" from="House" to="." method="_on_house_player_left"]

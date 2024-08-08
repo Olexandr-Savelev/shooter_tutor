@@ -112,7 +112,7 @@ script = ExtResource("2_ciy3e")
 [node name="CollisionPolygon2D" parent="." index="0"]
 polygon = PackedVector2Array(-178, -109, -178, 107, -171, 121, -158, 128, 155, 128, 169, 123, 177, 111, 178, -104, 174, -118, 164, -126, -159, -126, -173, -119)
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="BaseSprite" parent="." index="1"]
 texture = ExtResource("3_rydkp")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="2"]

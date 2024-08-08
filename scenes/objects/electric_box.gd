@@ -8,7 +8,7 @@ func _ready():
 
 
 func hit():
-	print('electric box')
+	print(current_direction)
 
 
 func _on_spark_emitting_timer_timeout():
