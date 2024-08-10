@@ -8,7 +8,7 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_alu55"]
 polygon = PackedVector2Array(-202, -77, -202, 80, -194, 90, 192, 90, 203, 76, 203, -74, 187, -89, -186, -89)
 
-[node name="Box" groups=["containers"] instance=ExtResource("1_mxo67")]
+[node name="Box" instance=ExtResource("1_mxo67")]
 script = ExtResource("2_ircu3")
 
 [node name="CollisionPolygon2D" parent="." index="0"]

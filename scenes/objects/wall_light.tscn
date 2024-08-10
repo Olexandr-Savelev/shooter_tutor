@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://boxolnd0ros41"]
 
 [ext_resource type="Texture2D" uid="uid://dxl2p0i2irvtj" path="res://graphics/objects/wall_lamp.png" id="1_dbcju"]
-[ext_resource type="Texture2D" uid="uid://dugllqb2nidgy" path="res://graphics/lights/overlays/circle.png" id="2_okmc4"]
+[ext_resource type="Texture2D" uid="uid://dugllqb2nidgy" path="res://graphics/lights/textures/circle.png" id="2_okmc4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qhtj7"]
 polygon = PackedVector2Array(176, -5, 173, 3, 173, 59, 183, 54, 187, 47, 187, 10, 184, 7, 182, -3)

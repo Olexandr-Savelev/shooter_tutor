@@ -14,20 +14,28 @@ func _ready():
 	var containers = get_tree().get_nodes_in_group("containers")
 	for container in containers:
 		container.connect('open', _on_container_opened)
-
+	var scouts = get_tree().get_nodes_in_group("scouts")	
+	for scout in scouts:
+		scout.connect('attack', _on_scout_attack)
+		
 func _on_container_opened(pos, direction):
 	var item = item_scene.instantiate()
 	item.position = pos
 	item.direction = direction
 	items.call_deferred("add_child", item)
+	
+func _on_scout_attack(pos, direction):
+	create_laser(pos, direction)
 
-func _on_player_laser(laser_position, direction):
+func _on_player_laser(pos, direction):
+	create_laser(pos, direction)
+
+func create_laser(pos, direction):
 	var laser = laser_scene.instantiate() as Area2D
-	laser.position = laser_position
+	laser.position = pos
 	laser.direction = direction
 	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
 	projectiles.add_child(laser)
-
 
 func _on_player_grenade(grenade_position, direction):
 	var grenade = grenade_scene.instantiate() as RigidBody2D

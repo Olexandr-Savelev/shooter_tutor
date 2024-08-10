@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgf5e5q03sotr"]
+
+[ext_resource type="Script" path="res://Scout.gd" id="1_rxtyv"]
+[ext_resource type="Texture2D" uid="uid://0ppmyt7mrwhg" path="res://graphics/enemies/scout.png" id="2_8vf42"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvehp"]
+radius = 53.0094
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ke2ha"]
+radius = 855.982
+
+[node name="Scout" type="CharacterBody2D" groups=["entity", "scouts"]]
+collision_layer = 2
+collision_mask = 15
+script = ExtResource("1_rxtyv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(38, 0)
+rotation = 1.5708
+texture = ExtResource("2_8vf42")
+region_enabled = true
+region_rect = Rect2(0, 0, 178, 223)
+
+[node name="LaserSpawnPos" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserSpawnPos"]
+position = Vector2(120, 13)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserSpawnPos"]
+position = Vector2(112, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jvehp")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_ke2ha")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(100, 19)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -50.0
+offset_right = 70.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+max_value = 50.0
+show_percentage = false
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

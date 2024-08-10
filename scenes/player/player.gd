@@ -21,6 +21,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	look_at(get_global_mouse_position())
+	Globals.player_position = position
 	
 	if Input.is_action_pressed("primary action") and can_laser and Globals.laser_amount > 0:
 		shoot_laser()
@@ -52,6 +53,11 @@ func _on_laser_cooldown_timeout():
 
 func _on_grenade_cooldown_timeout():
 	can_grenade = true
+	
+func hit():
+	Globals.health_amount -= 15
+	if Globals.health_amount <= 0:
+		print('You dead!')
 
 func get_item(type: String) -> void:
 	if type == 'laser':

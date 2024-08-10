@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scenes/objects/toilet.gd" id="2_nhc3k"]
 [ext_resource type="Texture2D" uid="uid://chi62cir3f1rc" path="res://graphics/objects/lid.png" id="4_rq5o8"]
 
-[node name="Toilet" groups=["containers"] instance=ExtResource("1_skayn")]
+[node name="Toilet" instance=ExtResource("1_skayn")]
 script = ExtResource("2_nhc3k")
 
 [node name="CollisionPolygon2D" parent="." index="0"]

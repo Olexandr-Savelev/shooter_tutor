@@ -30,9 +30,10 @@ radius = 61.0737
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a4p1y"]
 polygon = PackedVector2Array(-21, -58, 26, -60, 52, -34, 58, -27, 77, -10, 89, -11, 98, -5, 110, -3, 124, 3, 130, 7, 135, 14, 134, 26, 131, 33, 124, 37, 111, 37, 99, 44, 98, 51, 93, 54, 64, 52, 60, 45, 45, 41, 8, 56, -10, 61, -22, 60, -32, 55, -37, 46, -50, 24, -58, 3, -59, -17, -52, -31, -47, -42)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["entity"]]
 collision_mask = 31
 script = ExtResource("1_mkavk")
+metadata/_edit_group_ = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(136, 20)
